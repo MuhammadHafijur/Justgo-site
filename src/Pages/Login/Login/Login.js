@@ -1,8 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import './Login.css'
 
 const Login = () => {
+  const {signInUsingGoogle, setUser} = useAuth()
+
+  const handleGoogleLogin = (e) => {
+    signInUsingGoogle()
+    .then(result => setUser(result.user))
+    .catch((err) => console.log(err))
+    e.preventDefault()
+  }
+
+
+
+
+
   return (
     <div className="w-full h-screen font-sans bg-cover login bg-landscape">
       <div className="container flex items-center justify-center flex-1 h-full mx-auto">
@@ -34,7 +48,7 @@ const Login = () => {
               </div>
               <div className="flex items-center justify-between mt-4">
                 <button
-                  type="submit"
+                  onClick={handleGoogleLogin}
                   className="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
                 >
                   Login
