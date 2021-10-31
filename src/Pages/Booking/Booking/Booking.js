@@ -20,7 +20,7 @@ const Booking = () => {
         data.service = service;
         data.status = 'pending';
 
-    axios.post('http://localhost:5000/services', data)
+    axios.post('https://possessed-beast-94788.herokuapp.com/services', data)
     .then(res => {
       if(res.data.insertedId){
         alert('Successfully added your tour package');
@@ -29,13 +29,9 @@ const Booking = () => {
     })
   };
 
-  // data.userName = user.displayName;
-  //       data.email = user.email;
-  //       data.service = service;
-  //       data.status = 'pending';
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${serviceId}`)
+    fetch(`https://possessed-beast-94788.herokuapp.com/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);

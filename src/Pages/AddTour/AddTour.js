@@ -8,7 +8,7 @@ const AddTour = () => {
   const onSubmit = data => {
     console.log(data)
 
-    axios.post('http://localhost:5000/services', data)
+    axios.post('https://possessed-beast-94788.herokuapp.com/services', data)
     .then(res => {
       if(res.data.insertedId){
         alert('Successfully added your tour package');

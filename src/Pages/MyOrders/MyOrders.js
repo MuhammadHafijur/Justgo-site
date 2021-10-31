@@ -7,7 +7,7 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/manage-order')
+    fetch('https://possessed-beast-94788.herokuapp.com/manage-order')
     .then(res => res.json())
     .then(data => setOrders(data.filter(item => item.email === user.email)))
   }, [])
@@ -17,7 +17,7 @@ const MyOrders = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete ?");
     if (proceed) {
-      const url = `http://localhost:5000/order/${id}`;
+      const url = `https://possessed-beast-94788.herokuapp.com//order/${id}`;
       fetch(url, {
         method: "DELETE",
       })

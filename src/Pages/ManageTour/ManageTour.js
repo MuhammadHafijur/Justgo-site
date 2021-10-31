@@ -7,7 +7,7 @@ const ManageTour = () => {
   const [orders, setOrders] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/manage-order')
+    fetch('https://possessed-beast-94788.herokuapp.com/manage-order')
     .then(res => res.json())
     .then(data => setOrders(data))
   }, [])
@@ -17,7 +17,7 @@ const ManageTour = () => {
     const updateInfo = {
       status: "approved"
     }
-    const url = `http://localhost:5000/approve/${id}`;
+    const url = `https://possessed-beast-94788.herokuapp.com/approve/${id}`;
     fetch(url, { 
       method: "PUT",
       headers: {
@@ -33,35 +33,18 @@ const ManageTour = () => {
           'Your order has been updated.',
           'success'
         )
-        fetch('http://localhost:5000/manage-order')
+        fetch('https://possessed-beast-94788.herokuapp.com/manage-order')
                         .then(res => res.json())
                         .then(data => setOrders(data))
       }
     })
   }
 
-  // Swal.fire({
-  //   title: 'Are you sure?',
-  //   text: "You won't be able to revert this!",
-  //   icon: 'warning',
-  //   showCancelButton: true,
-  //   confirmButtonColor: '#3085d6',
-  //   cancelButtonColor: '#d33',
-  //   confirmButtonText: 'Yes, delete it!'
-  // }).then((result) => {
-  //   if (result.isConfirmed) {
-  //     Swal.fire(
-  //       'Deleted!',
-  //       'Your file has been deleted.',
-  //       'success'
-  //     )
-  //   }
-  // })
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete ?");
     if (proceed) {
-      const url = `http://localhost:5000/services/${id}`;
+      const url = `https://possessed-beast-94788.herokuapp.com/${id}`;
       fetch(url, {
         method: "DELETE",
       })
