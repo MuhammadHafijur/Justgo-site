@@ -12,6 +12,7 @@ import Booking from "./Pages/Booking/Booking/Booking";
 import Services from "./Pages/Services/Services";
 import Footer from "./Pages/Shared/Footer/Footer";
 import NotFound from "./Pages/NotFound/NotFound";
+import About from "./Pages/Home/About/About";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/services">
             <Services></Services>
+          </Route>
+          <Route path="/story">
+            <About></About>
           </Route>
           <Route path="/login">
             <Login></Login>

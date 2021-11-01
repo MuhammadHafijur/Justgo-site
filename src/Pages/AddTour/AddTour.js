@@ -71,10 +71,6 @@ const AddTour = () => {
         </div>
       </div>
     </div>
-
-    {/* <a href="/" target="_blank" className="md:absolute bottom-0 right-0 p-4 float-right">
-      <img src={plane} alt="Buy Me A Coffee" className="bg-gray-800 transition-all rounded-full w-14 -rotate-45 hover:shadow-sm shadow-lg ring hover:ring-4 ring-white" />
-    </a> */}
   </div>
 </div>
         </form>
@@ -84,13 +80,3 @@ const AddTour = () => {
 export default AddTour;
 
 
-
-
-
-{/* <form onSubmit={handleSubmit(onSubmit)}>
-        <input className='bg-gray-200' {...register("Name", { required: true, maxLength: 20 })} placeholder="Name" />
-        <textarea className='bg-green-200' {...register("Description")} placeholder="Description" />
-        <input className='bg-red-200' type="number" {...register("Price")} placeholder="Price" />
-        <input className='bg-green-200' {...register("img")} placeholder="Image url" />
-        <input className='bg-indigo-200' type="submit" />
-      </form> */}

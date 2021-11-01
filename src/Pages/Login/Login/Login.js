@@ -29,7 +29,7 @@ const Login = () => {
         <div className="w-full max-w-lg">
           <div className="leading-loose">
             <form className="max-w-sm p-10 m-auto bg-white bg-opacity-25 rounded shadow-xl">
-              <p className="mb-8 text-2xl font-light text-center text-white">
+              <p className="mb-8 text-3xl text-center font-semibold text-white">
                 Login
               </p>
               <div className="mb-2">

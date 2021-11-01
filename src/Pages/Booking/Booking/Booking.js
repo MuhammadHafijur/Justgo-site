@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 
@@ -20,7 +19,7 @@ const Booking = () => {
         data.service = service;
         data.status = 'pending';
 
-    axios.post('https://possessed-beast-94788.herokuapp.com/services', data)
+    axios.post('https://possessed-beast-94788.herokuapp.com/order', data)
     .then(res => {
       if(res.data.insertedId){
         alert('Successfully added your tour package');
@@ -31,7 +30,7 @@ const Booking = () => {
 
 
   useEffect(() => {
-    fetch(`https://possessed-beast-94788.herokuapp.com/${serviceId}`)
+    fetch(`https://possessed-beast-94788.herokuapp.com/services/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -45,6 +44,9 @@ const Booking = () => {
             alt="hero"
             src={service.img}
           />
+          {
+            console.log(service.img)
+          }
           <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
             {service.Name}
           </h1>
